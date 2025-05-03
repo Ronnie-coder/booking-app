@@ -1,0 +1,264 @@
+.header {
+    background-color: #003580;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0 100px 0;
+  }
+  
+  .headerList {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  
+  .headerListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .headerListItem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .headerListItem.active {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .headerTitle {
+    margin-bottom: 15px;
+  }
+  
+  .headerDesc {
+    margin: 20px 0;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  
+  .headerBtn {
+    background-color: #0071c2;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .headerBtn:hover {
+    background-color: #005fa3;
+  }
+  
+  .searchButton {
+    padding: 10px 20px;
+  }
+  
+  .headerSearch {
+    height: 30px;
+    background-color: white;
+    border: 3px solid #febb02;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -32px;
+    width: 100%;
+    max-width: 1024px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .headerIcon {
+    color: #777;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  .headerSearchItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    flex: 1;
+    padding: 0 15px;
+    height: 100%;
+  }
+  
+  .headerSearchItem:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
+  
+  .headerSearchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .headerSearchText {
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  
+  .headerSearchText:hover {
+    color: #333;
+  }
+  
+  .dateRangePicker {
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    z-index: 2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .dateRange {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .options {
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    padding: 15px;
+    width: 250px;
+    transition: all 0.3s ease;
+  }
+  
+  .optionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .optionItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .optionText {
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .optionCounterButton {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #0071c2;
+    color: #0071c2;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .optionCounterButton:hover:not(:disabled) {
+    background-color: #f0f8ff;
+  }
+  
+  .optionCounterButton:disabled {
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+    color: #ccc;
+    border-color: #ddd;
+  }
+  
+  .optionCounterNumber {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .optionIcon {
+    font-size: 12px;
+  }
+  
+  .dateRangePicker,
+  .options {
+    animation: fadeIn 0.3s ease;
+    transform-origin: top center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .headerSearch {
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+      gap: 15px;
+    }
+    
+    .headerSearchItem {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    
+    .headerSearchItem:last-child {
+      border-bottom: none;
+    }
+    
+    .dateRangePicker,
+    .options {
+      width: 100%;
+      left: 0;
+    }
+  } 
