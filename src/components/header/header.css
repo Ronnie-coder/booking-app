@@ -1,264 +1,338 @@
 .header {
-    background-color: #003580;
-    color: white;
-    display: flex;
-    justify-content: center;
-    position: relative;
+  background-color: #003580;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-height: 270px;
+  padding-bottom: 40px;
+  box-shadow: 0 2px 14px rgba(26, 46, 88, 0.07);
+}
+
+.headerContainer, .headerContainer.listMode {
+  width: 100%;
+  max-width: 1120px;
+  margin: 28px auto 130px auto;
+  padding: 0 22px;
+  position: relative;
+}
+
+.headerContainer.listMode {
+  margin-bottom: 20px;
+}
+
+.headerList {
+  display: flex;
+  gap: 38px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.headerListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 11px 16px;
+  border-radius: 20px;
+  transition: background 0.18s, box-shadow 0.18s;
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+
+.headerListItem:hover, .headerListItem.active {
+  background-color: rgba(255,255,255,0.13);
+  box-shadow: 0 3px 12px rgba(21, 33, 70, 0.08);
+}
+
+.headerListItem.active {
+  border: 1.5px solid #fff;
+}
+
+.headerTitle {
+  margin-bottom: 16px;
+  font-size: 2.12rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  text-shadow: 0 7px 20px rgba(0,0,0,0.16);
+}
+
+.headerDesc {
+  margin: 16px 0 29px 0;
+  max-width: 520px;
+  line-height: 1.66;
+  font-size: 1.16rem;
+  color: #e0eaff;
+  font-weight: 500;
+}
+
+.headerBtn {
+  background-color: #0071c2;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background 0.18s, color 0.16s, box-shadow 0.14s;
+  box-shadow: 0 2px 8px rgba(44,74,143,0.09);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 34px;
+  font-size: 1.08rem;
+  outline: none;
+}
+
+.headerBtn:hover, .headerBtn:focus {
+  background-color: #005fa3;
+  color: #ffe38a;
+  box-shadow: 0 6px 24px rgba(52, 118, 226, 0.12);
+}
+
+.searchButton {
+  padding: 11px 24px;
+  font-size: 1.09rem;
+}
+
+.headerSearch {
+  min-height: 62px;
+  background: white;
+  border: 3px solid #febb02;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  border-radius: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -46px;
+  width: 99%;
+  max-width: 1024px;
+  z-index: 10;
+  box-shadow: 0 7px 28px rgba(14,20,54,0.13);
+  display: flex;
+}
+
+.headerIcon {
+  color: #364467;
+  font-size: 1.08rem;
+  margin-right: 5px;
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 1.16;
+  padding: 0 13px;
+  height: 100%;
+}
+
+.headerSearchItem:not(:last-child) {
+  border-right: 1.2px solid #e3e7f0;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.07rem;
+  color: #232f57;
+  background: transparent;
+}
+
+.headerSearchInput::placeholder {
+  color: #98a5bc;
+  font-weight: 400;
+}
+
+.headerSearchText {
+  color: #686a78;
+  cursor: pointer;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.headerSearchText:hover, .headerSearchText:focus {
+  color: #0a1c48;
+  font-weight: 500;
+}
+
+.dateRangePicker {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  z-index: 15;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 21px rgba(18,46,90,0.23);
+  background: #fff;
+  animation: fadeIn 0.3s cubic-bezier(.45,0,.55,1);
+}
+
+.dateRange {
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.08);
+  font-size: .99rem;
+}
+
+.options {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  background-color: white;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 6px 21px rgba(18,46,90,0.19);
+  z-index: 15;
+  padding: 17px 19px 13px 19px;
+  width: 260px;
+  animation: fadeIn 0.28s cubic-bezier(.44,0,.56,1);
+}
+
+.optionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  padding-bottom: 9px;
+  border-bottom: 1.2px solid #f0f0f0;
+}
+
+.optionItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.optionText {
+  font-weight: 600;
+  color: #2d3761;
+}
+
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.06rem;
+  color: #1b254c;
+}
+
+.optionCounterButton {
+  width: 33px;
+  height: 33px;
+  border: 1.5px solid #0071c2;
+  color: #0071c2;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.14s, color 0.14s, border-color 0.14s;
+  font-size: 1.16rem;
+  outline: none;
+}
+
+.optionCounterButton:hover:not(:disabled), .optionCounterButton:focus:not(:disabled) {
+  background-color: #e9f3fd;
+  color: #055490;
+  border-color: #055490;
+}
+
+.optionCounterButton:disabled {
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  color: #d1dbe5;
+  border-color: #e0eaf4;
+}
+
+.optionCounterNumber {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.optionIcon {
+  font-size: 0.97rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
   }
-  
-  .headerContainer {
-    width: 100%;
-    max-width: 1024px;
-    margin: 20px 0 100px 0;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
-  
-  .headerList {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .header, .headerContainer, .headerSearch {
+    min-width: 0;
+    max-width: 100vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
   }
-  
-  .headerListItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  .headerListItem:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .headerListItem.active {
-    border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  
-  .headerTitle {
-    margin-bottom: 15px;
-  }
-  
-  .headerDesc {
-    margin: 20px 0;
-    max-width: 600px;
-    line-height: 1.5;
-  }
-  
-  .headerBtn {
-    background-color: #0071c2;
-    color: white;
-    font-weight: 500;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .headerBtn:hover {
-    background-color: #005fa3;
-  }
-  
-  .searchButton {
-    padding: 10px 20px;
-  }
-  
   .headerSearch {
-    height: 30px;
-    background-color: white;
-    border: 3px solid #febb02;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 15px 0;
-    border-radius: 5px;
-    position: absolute;
-    bottom: -32px;
-    width: 100%;
-    max-width: 1024px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 4px 1vw;
+    font-size: 1rem;
   }
-  
-  .headerIcon {
-    color: #777;
-    font-size: 18px;
-    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .headerContainer, .headerContainer.listMode {
+    margin: 15px auto 60px auto;
+    padding: 0 4vw;
   }
-  
+  .headerList {
+    gap: 13px;
+    font-size: 1rem;
+  }
+  .headerSearch {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 8px;
+    min-width: 0;
+    max-width: 98vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 3vw;
+  }
   .headerSearchItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    flex: 1;
-    padding: 0 15px;
-    height: 100%;
-  }
-  
-  .headerSearchItem:not(:last-child) {
-    border-right: 1px solid #ddd;
-  }
-  
-  .headerSearchInput {
-    border: none;
-    outline: none;
+    border-right: none;
+    border-bottom: 1px solid #e2e6ef;
     width: 100%;
-    font-size: 14px;
-    color: #333;
+    padding: 8px 0;
+    min-width: 0;
+    gap: 8px;
+    font-size: 0.99rem;
   }
-  
-  .headerSearchText {
-    color: #666;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    transition: color 0.2s ease;
-  }
-  
-  .headerSearchText:hover {
-    color: #333;
-  }
-  
-  .dateRangePicker {
-    position: absolute;
-    top: 60px;
-    left: -10px;
-    z-index: 2;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .dateRange {
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .options {
-    position: absolute;
-    top: 60px;
-    left: -10px;
-    background-color: white;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    padding: 15px;
-    width: 250px;
-    transition: all 0.3s ease;
-  }
-  
-  .optionItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .optionItem:last-child {
+  .headerSearchItem:last-child {
     border-bottom: none;
-    padding-bottom: 0;
   }
-  
-  .optionText {
-    font-weight: 500;
-    color: #444;
+  .dateRangePicker, .options {
+    width: 99vw;
+    left: 0;
+    right: 0;
+    min-width: unset;
+    max-width: 100vw;
+    top: 77px;
+    border-radius: 0 0 13px 13px;
   }
-  
-  .optionCounter {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .optionCounterButton {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #0071c2;
-    color: #0071c2;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-  }
-  
-  .optionCounterButton:hover:not(:disabled) {
-    background-color: #f0f8ff;
-  }
-  
-  .optionCounterButton:disabled {
-    cursor: not-allowed;
-    background-color: #f5f5f5;
-    color: #ccc;
-    border-color: #ddd;
-  }
-  
-  .optionCounterNumber {
-    min-width: 20px;
-    text-align: center;
-    font-weight: 500;
-  }
-  
-  .optionIcon {
-    font-size: 12px;
-  }
-  
-  .dateRangePicker,
-  .options {
-    animation: fadeIn 0.3s ease;
-    transform-origin: top center;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .headerSearch {
-      flex-direction: column;
-      height: auto;
-      padding: 15px;
-      gap: 15px;
-    }
-    
-    .headerSearchItem {
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
-    
-    .headerSearchItem:last-child {
-      border-bottom: none;
-    }
-    
-    .dateRangePicker,
-    .options {
-      width: 100%;
-      left: 0;
-    }
-  } 
+}
+
+/* Button/focus fixes for accessibility */
+.headerBtn:focus, .searchButton:focus, .optionCounterButton:focus {
+  outline: 2px solid #febb02;
+  outline-offset: 2px;
+}

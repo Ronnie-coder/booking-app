@@ -1,0 +1,136 @@
+.featuredProperties {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    background: linear-gradient(110deg, #f6faff 60%, #e3f1fa 100%);
+    padding: 32px 24px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(18, 49, 90, 0.07);
+}
+
+.fp {
+    flex: 1 1 260px; /* grow/shrink, min 260px */
+    max-width: 300px;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.fpItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 14px rgba(44, 62, 80, 0.14);
+    border-radius: 16px;
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.18s cubic-bezier(.4,0,.2,1);
+    min-height: 390px;
+    position: relative;
+}
+
+.fpItem:hover {
+    transform: translateY(-8px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.16);
+}
+
+.fpImg {
+    width: 100%;
+    min-height: 170px;
+    max-height: 170px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    background: #d5eafb;
+    border-bottom: 1px solid #e6edf7;
+    transition: transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+.fpItem:hover .fpImg {
+    transform: scale(1.045);
+}
+
+.fpName {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 16px 0 2px 0;
+    letter-spacing: 0.01em;
+    color: #232d47;
+    padding: 0 16px;
+}
+
+.fpCity {
+    font-weight: 400;
+    color: #7885a9;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding: 0 16px;
+}
+
+.fpPrice {
+    font-weight: 600;
+    color: #003580;
+    font-size: 1.06rem;
+    margin-bottom: 14px;
+    padding: 0 16px;
+}
+
+.fpRating {
+    display: flex;
+    align-items: center;
+    padding: 0 16px 14px 16px;
+}
+
+.fpRating > button {
+    background-color: #003580;
+    color: #fff;
+    border: none;
+    padding: 4px 13px;
+    border-radius: 7px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 1.04rem;
+    font-family: inherit;
+    box-shadow: 0 3px 9px var(--shadow, rgba(0, 53, 128, 0.10));
+    transition: background 0.13s;
+    cursor: pointer;
+}
+
+.fpRating > button:hover, .fpRating > button:focus {
+    background: #0755a4;
+}
+
+.fpRating > span {
+    font-size: 1rem;
+    color: #31409a;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+    .featuredProperties {
+        flex-direction: column;
+        gap: 24px;
+        padding: 18px 8px;
+        border-radius: 0;
+    }
+    .fp,
+    .fpItem {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .featuredProperties {
+        padding: 2vw;
+        gap: 12px;
+        border-radius: 0;
+    }
+    .fpItem {
+        min-height: 320px;
+    }
+}

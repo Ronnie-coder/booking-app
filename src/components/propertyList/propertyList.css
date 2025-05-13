@@ -1,0 +1,101 @@
+.pList {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto 18px auto;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+  
+  .pListItem {
+    flex: 1 1 132px;
+    min-width: 168px;
+    max-width: 202px;
+    background: #fff;
+    border-radius: 13px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(33, 52, 83, 0.13);
+    transition: transform 0.15s cubic-bezier(.44,0,.56,1), box-shadow 0.14s cubic-bezier(.44,0,.56,1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .pListItem:hover, .pListItem:focus {
+    transform: translateY(-6px) scale(1.045);
+    box-shadow: 0 8px 32px rgba(33, 52, 83, 0.19);
+  }
+  
+  .pListImg {
+    width: 100%;
+    height: 128px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.13s;
+    filter: brightness(0.93) contrast(1.09);
+    border-bottom: 1.5px solid #f0f4fa;
+  }
+  
+  .pListItem:hover .pListImg {
+    filter: brightness(1.01) contrast(1.16) saturate(1.09);
+  }
+  
+  .pListTitles {
+    padding: 17px 14px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .pListTitles > h1 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin: 0;
+    color: #15307a;
+    letter-spacing: 0.01em;
+  }
+  
+  .pListTitles > h2 {
+    font-size: 0.98rem;
+    font-weight: 400;
+    color: #7586ad;
+    margin: 1px 0 0 0;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .pList {
+      gap: 16px;
+      max-width: 98vw;
+    }
+    .pListItem {
+      min-width: 120px;
+      max-width: 48vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .pList {
+      gap: 10px;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      flex-wrap: wrap;
+    }
+    .pListItem {
+      min-width: 50vw;
+      max-width: 90vw;
+      height: auto;
+    }
+    .pListImg {
+      height: 85px;
+    }
+    .pListTitles {
+      padding: 12px 8px 9px 8px;
+    }
+  }
